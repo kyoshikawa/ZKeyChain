@@ -1,0 +1,37 @@
+ZKeyChain
+
+Author:
+	Kaz Yoshikawa (kyoshikawa@electricwoods.com)
+
+License:
+	MIT License
+	
+Description:	
+	Using key chain on iOS is not fun to play.  This class will help
+	you access key chain as much like NSMutableDictionary.
+
+Usage:
+	
+	NSData *someData = ...
+
+	ZKeyChain *keyChain = [ZKeyChian keyChianWithService:@"YourService"];
+	[keyChain setString:@"user@domain.com" forKey:@"userid"];
+	[keyChain setData:someData forKey:@"data"];
+	[keyChain setImage:nil forKey:@"image"];  // remove data from key
+
+
+API:
+
+	- (void)setData:(id)aData forKey:(NSString *)aKey;
+	- (id)dataForKey:(NSString *)aKey;
+	- (void)setString:(NSString *)aString forKey:(NSString *)aKey;
+	- (NSString *)stringForKey:(NSString *)aKey;
+	- (void)setDictionary:(NSDictionary *)aDictionary forKey:(NSString *)aKey;
+	- (NSDictionary *)dictionaryForKey:(NSString *)aKey;
+
+
+
+
+
+
+	
